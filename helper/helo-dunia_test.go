@@ -7,6 +7,18 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+func BenchmarkHelloWorld(b *testing.B) {
+	for i := 0; i <= b.N; i++ {
+		HelloWorld("Yamdi Mologyg")
+	}
+}
+
+func BenchmarkRecursive(b *testing.B) {
+	for i := 0; i <= b.N; i++ {
+		factorial(100000)
+	}
+}
+
 func TestHelloWorld(t *testing.T) {
 	result := HelloWorld("Yamdi")
 
